@@ -39,7 +39,10 @@ if __name__ == "__main__":
     application.add_handler(start_handler)
     application.add_handler(echo_handler)
 
-    port = int(os.environ.get('PORT', 5000))
+    port = int(os.environ.get("PORT", 5000))
     application.run_webhook(
-        listen="0.0.0.0", port=port, url_path=config.BOT_TOKEN
+        listen="0.0.0.0",
+        port=port,
+        url_path=config.BOT_TOKEN,
+        webhook_url=f"https://fa9d0sf-7e30cea95529.herokuapp.com/{config.BOT_TOKEN}",
     )
